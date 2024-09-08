@@ -1,0 +1,99 @@
+SELECT j.title,worker.name as worker,a.applied_at,a.status
+FROM applications a 
+INNER JOIN users as worker ON a.worker_id = worker.user_id
+INNER JOIN jobs j ON a.job_id = j.job_id
+inner join users as client on j.posted_by=client.user_id
+WHERE client.user_id=12 ;
+
+
+hna bach njib detail dial khona li m appliiyi 
+SELECT j.*,worker.name as worker,worker.email,worker.phone_number,a.*
+FROM applications a 
+INNER JOIN users as worker ON a.worker_id = worker.user_id
+INNER JOIN jobs j ON a.job_id = j.job_id
+inner join users as client on j.posted_by=client.user_id
+WHERE client.user_id=12 and worker.user_id=11 and j.job_id=51 group by j.title;
+
+
+
+sift user l page likan fiha 9bel maytconnecta :
+
+session_start();
+$_SESSION['last_page'] = $_SERVER['REQUEST_URI'];
+header('Location: login.php');
+exit();
+
+
+
+hadi dirha f les pages 
+
+session_start();
+
+if (isset($_SESSION['last_page'])) {
+    $lastPage = $_SESSION['last_page'];
+    unset($_SESSION['last_page']); // Clear it after use
+    header("Location: $lastPage");
+    exit();
+} else {
+    // Redirect to a default page if no last page is set
+    header('Location: index.php');
+    exit();
+}
+
+
+
+
+  <div class="card mb-4 shadow-small">
+                    <?php
+                    if ($_SESSION['role']==='worker'){
+                        if($status==='rejected'){
+                            ?>
+                            <div class="card-body ">
+                            <!-- <h6><strong>Status: <?php echo $status?> </strong></h6>  -->
+                            <div class="" id="statusMessage"></div>
+    
+                            <a href="#" 
+                                class="btn btn-danger w-100 mb-3 btn-lg delete-application" 
+                                data-application-id="<?php echo $application_id; ?>">
+                                Delete my application
+                            </a>            
+                            </div>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <div class="card-body ">
+                            <!-- <h6><strong>Status: <?php echo $status?> </strong></h6>  -->
+                            <div class="" id="statusMessage"></div>
+    
+                            <a href="#" 
+                                class="btn btn-danger w-100 mb-3 btn-lg delete-application" 
+                                data-application-id="<?php echo $application_id; ?>">
+                                Contact the employer
+                            </a>            
+                            </div>
+                            <?php
+                        }
+                        
+                    }else{
+                        ?>
+                        <div class="card-body ">
+                            
+                            <h6 ><strong>Status: <?php echo $status?></strong></h6> 
+                            <a href="#" 
+                            class="btn btn-success bg-primary btn-lg w-100 mb-3 update-status" 
+                            data-application-id="<?php echo $application_id; ?>" 
+                            data-status="accepted">
+                            Accept
+                            </a>
+                            <a href="#" 
+                            class="btn btn-danger w-100 mb-3 btn-lg update-status" 
+                            data-application-id="<?php echo $application_id; ?>" 
+                            data-status="rejected">
+                            Reject
+                            </a>                    
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>

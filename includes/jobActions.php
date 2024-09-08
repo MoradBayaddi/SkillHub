@@ -40,8 +40,6 @@ else{
     <div class="col-md-3">
             <div class="card mb-4 shadow-small">
                 <div class="card-body text-center">
-                    <!-- <a href="./editeJob.php?job_id=<?php echo $_GET['job_id']?>" 
-                    class="btn btn-sec btn-lg w-100 mb-3">Apply</a> -->
                     <a href="#" class="btn btn-secondary btn-lg w-100" id="share-button">
                         <i class="fa-solid fa-share"></i> Share</a>
                 </div>

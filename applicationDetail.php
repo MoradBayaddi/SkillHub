@@ -1,26 +1,8 @@
 <?php
 session_start();
 $_SESSION['last_page'] = $_SERVER['REQUEST_URI'];
-if(isset($_SESSION['email']))
-{
-    if ($_SESSION['role']==='worker'){
-        // echo '<script type = "text/javascript">';
-        // echo 'alert("permission denied please ; sing as client ")';
-        // echo '</script>';
-        // echo '<script type = "text/javascript">';
-        // echo 'window.location.href = "./index.php"';
-        // echo '</script>';
-    }
-}
-// else{
-//     echo '<script type = "text/javascript">';
-//         echo 'alert("Please login !")';
-//         echo '</script>';
-//         echo '<script type = "text/javascript">';
-//         echo 'window.location.href = "./login.php"';
-//         echo '</script>';
-// }
-// ?>
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -116,14 +116,7 @@ else{
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4">
-                                <div class="card card-custom">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Jobs Completed</h5>
-                                        <p class="card-text display-4"><?php echo $jobs_completed; ?></p>
-                                    </div>
-                                </div>
-                            </div> -->
+                            
                         </div>
                     </div>
                 </div>
@@ -212,8 +205,6 @@ else{
                                                     
                                                 </td>';
                                             echo "</tr>";
-                                            // <a href="#" class="btn btn-success btn-sm">Accept</a>
-                                            //         <a href="#" class="btn btn-danger btn-sm">Reject</a>
                                         }
                                     } else {
                                         // Display a message if no applications are found

@@ -4,9 +4,6 @@ include ('./includes/connectiondb.php');
 if(isset($_SESSION['user_id']))
 {
     if ($_SESSION['role']==='client'){
-        // echo '<script type = "text/javascript">';
-        // echo 'alert("permission denied please ; sing as client ")';
-        // echo '</script>';
         echo '<script type = "text/javascript">';
         echo 'window.location.href = "./applications.php"';
         echo '</script>';
@@ -44,7 +41,6 @@ else{
                 <div class="card mb-4">
                     <div class="card-body text-center">
                         <h4><?php echo $_SESSION['email']; ?></h4>
-                        <!-- <img src="client-profile-pic.jpg" alt="Client Profile Picture" class="rounded-circle mb-3" width="150"> -->
                         <h3><?php echo $_SESSION['name']; ?></h3>
                         <p class=""><?php echo $_SESSION['role']; ?></p>
                         <a href="#" class="btn btn-primary">Edit Profile</a>
@@ -117,8 +113,6 @@ else{
                                                         
                                                     </td>';
                                                 echo "</tr>";
-                                                // <a href="#" class="btn btn-success btn-sm">Accept</a>
-                                                //         <a href="#" class="btn btn-danger btn-sm">Reject</a>
                                             }
                                         } else {
                                             // Display a message if no applications are found

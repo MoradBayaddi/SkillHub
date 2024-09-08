@@ -58,8 +58,7 @@
                                                     
                                                 </td>';
                                             echo "</tr>";
-                                            // <a href="#" class="btn btn-success btn-sm">Accept</a>
-                                            //         <a href="#" class="btn btn-danger btn-sm">Reject</a>
+                                            
                                         }
                                     } else {
                                         // Display a message if no applications are found
