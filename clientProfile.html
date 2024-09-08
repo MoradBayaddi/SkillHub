@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>SkillHub</title>
+</head>
+
+<body class="">
+   
+    <nav class="navbar container-lg navbar-expand-lg navbar-light">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand px-0 mx-0 mx-lg-1" href="/index.html">
+                <img class="img-logo img-secure" src="/img/logo.png" alt="">
+            </a>
+            <button class="navbar-toggler shadow-none border-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon  "></span>
+            </button>
+            <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title fs-2" id="offcanvasNavbarLabel">SkillHub</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+
+
+                <div
+                    class="offcanvas-body mt-3 mt-lg-0 d-flex flex-column flex-lg-row justify-content-lg-end align-items-center p-3 px-lg-0">
+                    <ul class="navbar-nav justify-content-lg-end align-items-center  pe-lg-3">
+                        <li class="nav-item ">
+                            <a class="nav-link  px-md-3" aria-current="page" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3" href="./pages/jobs.html">Jobs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link px-md-3" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex  flex-column flex-lg-row justify-content-end align-items-center gap-3">
+                        <a class="btn-link me-lg-3" href="/pages/login.html">Login</a>
+                        <a class="btn-primary shadow-large" href="./pages/register.html">Sing up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Sidebar with client information -->
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="client-profile-pic.jpg" alt="Client Profile Picture" class="rounded-circle mb-3" width="150">
+                        <h3>John Doe</h3>
+                        <p>Client</p>
+                        <a href="#editProfileModal" class="btn btn-primary" data-bs-toggle="modal">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-8">
+                <!-- Posted Jobs Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Your Posted Jobs</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="postedJobsAccordion">
+                            <!-- Job 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Job Title 1
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#postedJobsAccordion">
+                                    <div class="accordion-body">
+                                        <p><strong>Location:</strong> City A</p>
+                                        <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <a href="#" class="btn btn-info">View Applicants</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Additional jobs can be added similarly -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4>Worker Applications</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <h5>Worker Name 1</h5>
+                                <p>Applied for: Job Title 1</p>
+                                <a href="#" class="btn btn-primary">View Profile</a>
+                            </li>
+                            <!-- Additional applications can be added similarly -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Profile Edit Section (Modal) -->
+                <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="profileName" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="profileName" value="John Doe">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profileEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="profileEmail" value="johndoe@example.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profilePassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="profilePassword" placeholder="Enter new password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="profileConfirmPassword" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="profileConfirmPassword" placeholder="Confirm new password">
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="footer" class="bg-black text-white ">
+        <div class="container py-5 px-lg-0 px-5">
+            <div class="row d-flex align-items-start">
+                <div class="col-md-6">
+                    <a href=""><img src="/img/logo-dark.png" class="img-fluid" alt=""></a>
+                    <p class=" mt-2">SkillHub connects clients with skilled handworkers for reliable and efficient
+                        service. Find the right professional for any project with ease.</p>
+                </div>
+                <div class="col-md-3 ">
+                    <h4 class="text-white mt-lg-0 mt-3">Navigation</h4>
+                    <div class="d-flex flex-column justify-content-between">
+                        <a class="link " href="">Home</a>
+                        <a class="link " href="">Wow it works</a>
+                        <a class="link " href="">Create account</a>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mt-lg-0 mt-3">
+                    <h4 class="text-white">Contact</h4>
+                    <div class=" d-flex flex-column justify-content-between">
+                        <a class="link mb-3"
+                            href="mailto:m.bayaddi@gmail.com?subject=Service Inquiry&body=Hello, I am interested in your services."><i
+                                class="fa-regular fa-envelope icon text-white me-3"></i>m.bayaddi@gmail.com</a>
+                        <a class="link" href=""><i class="fa-solid fa-phone icon text-white me-3"></i>+212 695-588-774</a>
+                    </div>
+                    <div class="d-flex  gap-3 justify-content-lg-between my-3 ">
+                        <a href="" class="fa-brands fa-instagram icon"></a>
+                        <a href="" class="fa-brands fa-facebook icon"></a>
+                        <a href="" class="fa-brands fa-x-twitter icon"></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/f7066038ac.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script> -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
