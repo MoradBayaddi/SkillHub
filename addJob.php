@@ -50,7 +50,7 @@ else{
                         <h4><?php echo $_SESSION['email']; ?></h4>
                         <h3><?php echo $_SESSION['name']; ?></h3>
                         <p class=""><?php echo $_SESSION['role']; ?></p>
-                        <a href="#" class="btn btn-primary">Edit Profile</a>
+                        <a href="./profile.php" class="btn btn-primary">Edit Profile</a>
                     </div>
                 </div>
             </div>

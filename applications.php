@@ -58,7 +58,7 @@ else{
                 INNER JOIN users as worker ON a.worker_id = worker.user_id
                 INNER JOIN jobs j ON a.job_id = j.job_id
                 inner join users as client on j.posted_by=client.user_id
-                WHERE client.email=? ";
+                WHERE client.email=? order by a.applied_at desc";
 
                 $stmtRecentApplications = $conn->prepare($queryRecentApplications);
                 $stmtRecentApplications->bind_param("s", $email);
@@ -98,7 +98,7 @@ else{
                                                 echo "<td>" . htmlspecialchars($row['worker']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['applied_at']) . "</td>";
                                                 echo "<td>" . htmlspecialchars($row['status']) . "</td>";
-                                                echo "<td>" . htmlspecialchars($row['application_id']) . "</td>";
+                                                // echo "<td>" . htmlspecialchars($row['application_id']) . "</td>";
                                                 echo '<td>
                                                         <a href="./applicationDetail.php?job_id='. htmlspecialchars($row['job_id']) .'&client_id='. htmlspecialchars($row['client_id']).'&worker_id='. htmlspecialchars($row['worker_id']).'&status='. htmlspecialchars($row['status']).'&application_id='. htmlspecialchars($row['application_id']).'"
                                                         class="btn btn-primary py-1 mx-1 px-2 btn-sm">

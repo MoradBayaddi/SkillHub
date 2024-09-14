@@ -9,7 +9,7 @@
                 INNER JOIN users as worker ON a.worker_id = worker.user_id
                 INNER JOIN jobs j ON a.job_id = j.job_id
                 inner join users as client on j.posted_by=client.user_id
-                WHERE client.email=? and j.job_id=?"  ;
+                WHERE client.email=? and j.job_id=? order by a.applied_at desc"  ;
 
                 $stmtRecentApplications = $conn->prepare($queryRecentApplications);
                 $stmtRecentApplications->bind_param("si", $email,$job_id);
