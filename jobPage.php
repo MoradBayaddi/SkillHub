@@ -5,8 +5,7 @@ if(isset($_GET['job_id']) && isset($_GET['worker_id']) )
 {   
 $job_id = $_GET['job_id'];
 $worker_id=$_GET['worker_id'];
-// echo $job_id;
-// echo $worker_id;
+
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +23,7 @@ $worker_id=$_GET['worker_id'];
     <?php 
     include ('./includes/navbar.php'); 
     
-    // include ('./includes/getJobPage.php'); 
+    
     ?>
    
 
@@ -45,7 +44,21 @@ $worker_id=$_GET['worker_id'];
                 if(isset($_SESSION['email']))
                 {
                     if ($_SESSION['role']==='client'){
-                    include './includes/fetchRecentApplications.php';  
+                        
+                        $job_id=$_GET['job_id'];
+                        $user_id=$_SESSION['user_id'];
+                
+                        include './includes/connectiondb.php';
+                        $query = "SELECT * FROM jobs WHERE job_id = ? and posted_by=?";
+                        $stmt = $conn->prepare($query);
+                        $stmt->bind_param('ii', $job_id,$user_id);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                
+                        if ($result->num_rows > 0) {
+                            include './includes/fetchRecentApplications.php';
+                        }
+                      
                     }
                     
                     if ($_SESSION['role']==='worker'){
@@ -75,7 +88,6 @@ $worker_id=$_GET['worker_id'];
                         <div class="card my-5 p-3">
                             <h5>Log in to apply</h5>
                             <a class="btn-primary mb-3" href="./login.php">Login</a>
-                            <button type="submit" disabled class="btn-primary">Apply</button>
                         </div>
                         <?php
                 }

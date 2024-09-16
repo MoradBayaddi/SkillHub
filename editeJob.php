@@ -205,6 +205,9 @@ mysqli_close($conn);
                         if (response.status === 'success') {
                             $('#edit-job-form')[0].reset();
                             showMessage('Job updated successfully!', 'success');
+                            setTimeout(function() {
+                            window.location.href = "./myJobs.php";
+                        }, 2000);
                         } else {
                             showMessage('Error: ' + response.message, 'danger');
                         }
